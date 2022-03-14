@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1230px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.header {
+  background-color: black;
+  color: white;
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainMenu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.mainMenu li {
+  padding: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.mainMenu li:hover {
+  background-color: grey;
+}
+
+.nav .openBurger span {
+  cursor: pointer;
+  display: none;
+}
+
+.closeMenu {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .nav .mainMenu {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    transition: top 0.5s ease;
+  }
+  .nav .openBurger span {
+    display: block;
+  }
+  .nav .mainMenu .closeMenu {
+    /* Слово close в меню */
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+  }
+  .nav .openBurger {
+    display: block;
+    position: relative;
+    flex: 0 0 30px;
+    height: 20px;
+  }
+  .nav .openBurger span {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+  }
+  .nav .openBurger:before,
+  .nav .openBurger:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  }
+  .openBurger:before {
+    top: 0;
+  }
+  .openBurger:after {
+    bottom: 0;
+  }
+}
+
+/* ============================================== */
