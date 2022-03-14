@@ -12,3 +12,4 @@ function show() {
 function close() {
   mainMenu.style.top = "-100%";
 }
+document.querySelectorAll('li').forEach(n => n.addEventListener('click', close))
